@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= serviceName %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="badge">Production Ready</p>
+        <h1><%= serviceName %></h1>
+        <p class="subtitle">
+          Global countries, states, and cities APIs for registration workflows.
+          Built with Node.js, Express, and MongoDB.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="/api/countries">Try Countries API</a>
+          <a class="btn" href="/health">Check Health</a>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>How This Works</h2>
+          <ol>
+            <li>Call <code>/api/countries</code> to render country dropdown.</li>
+            <li>On country selection, call <code>/api/states/:countryCode</code>.</li>
+            <li>
+              On state selection, either search with
+              <code>/api/cities?state=XX&q=text</code> or paginate with
+              <code>/api/cities/all</code>.
+            </li>
+          </ol>
+        </section>
+
+        <section class="card">
+          <h2>Base URL</h2>
+          <p><code><%= baseUrl %></code></p>
+        </section>
+
+        <section class="grid">
+          <% endpoints.forEach(function(endpoint) { %>
+          <article class="endpoint-card">
+            <div class="method"><%= endpoint.method %></div>
+            <div class="path"><code><%= endpoint.path %></code></div>
+            <p><%= endpoint.description %></p>
+            <a href="<%= endpoint.sample %>" target="_blank" rel="noreferrer">
+              <code><%= endpoint.sample %></code>
+            </a>
+          </article>
+          <% }) %>
+        </section>
+
+        <section class="card">
+          <h2>Standard Response Shape</h2>
+          <pre>{
+  "success": true,
+  "data": [...]
+}</pre>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
