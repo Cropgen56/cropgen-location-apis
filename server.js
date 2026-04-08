@@ -42,7 +42,15 @@ const corsOptions = {
     return callback(new Error("CORS policy: origin not allowed."));
   },
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  // Must include custom headers sent by Cropgen/Biodrops web apps (axios.defaults).
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "X-Client-App",
+    "X-Client-Brand",
+    "Accept",
+    "Accept-Language",
+  ],
   credentials: true,
 };
 
