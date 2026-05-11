@@ -20,6 +20,7 @@ const allowedOrigins = new Set([
   "https://test.cropgenapp.com",
   "https://biodrops.cropgenapp.com",
   "https://location.cropgenapp.com",
+  "https://monitor.cropgenapp.com",
   "http://localhost:3000",
   "http://localhost:3001",
   "http://localhost:5173",
