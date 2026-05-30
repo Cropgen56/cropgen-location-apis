@@ -24,9 +24,11 @@ const allowedOrigins = new Set([
   "http://localhost:3000",
   "http://localhost:3001",
   "http://localhost:5173",
+  "http://localhost:5174",
   "http://10.0.2.2:7070",
   "http://localhost:5176",
   "https://satagro.ai",
+  "https://app.satagro.ai",
 ]);
 
 const corsOptions = {
